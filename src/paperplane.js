@@ -6,7 +6,7 @@ function PaperPlane(name, icon) {
   this.name = name || "PaperPlane"
   this.icon = icon || ":airplane:"
   
-  PaperPlane.prototype.send = function() {
+  PaperPlane.prototype.send = () => {
     var jsonData = {
       "username" : this.name,
       "icon_emoji": this.icon,
@@ -26,14 +26,14 @@ function PaperPlane(name, icon) {
 }
 
 var PlaneFolder = {
-  section: function(elem) {
+  section: (elem) => {
     return {
-		"type": "section",
-		"text": {
-			"type": "mrkdwn",
-			"text": elem
-		}
-	}
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": elem
+      }
+    }
   },
   devider: { "type": "divider" }
 }
